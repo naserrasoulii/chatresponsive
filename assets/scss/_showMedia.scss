@@ -1,0 +1,93 @@
+.showMediaSection {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100vh;
+    overflow: auto;
+    background: $light2Color;
+    transition: all 1s;
+    z-index: 2;
+    scroll-behavior: smooth;
+
+    // &::-webkit-scrollbar {
+    //     width: 0;
+    // }
+
+    &.show {
+        left: 0;
+    }
+
+    .header {
+        .btnCloseMedia {
+            font-size: 1rem;
+            background-color: $primaryColor;
+            color: $whiteColor;
+        }
+
+        img {
+            width: 60px;
+            height: 60px;
+            object-fit: 100% 100%;
+            @include borderRadiusAll(50%);
+            @include border(2px, $secoundryColor);
+            @include boxSahdowBlack(15px, 0.5);
+            margin-left: 10px;
+        }
+
+        .detail {
+            .name {
+                font-size: 0.8rem;
+                font-weight: bold;
+            }
+
+            &:not(.name) {
+                font-size: 0.7rem;
+            }
+        }
+    }
+
+    .showAllImg {
+
+        .img-show {
+            width: 100%;
+            overflow: hidden;
+            @include boxSahdowBlack(5px, 0.3);
+            @include borderRadiusAll(5px);
+
+            .video {
+
+                position: relative;
+
+                // cursor: pointer;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    @include afterColorBlack(0.5)
+                }
+
+                &::after {
+                    content: '\F4F4';
+                    font-family: bootstrap-icons !important;
+                    color: $whiteColor;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 2rem;
+
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: 100% 100%;
+            }
+        }
+    }
+}

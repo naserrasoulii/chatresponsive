@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/images/favicon.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.rtl.min.css" />
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- Custom CSS Style -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Chat Responsive</title>
+</head>
+
+<body >
+
+    <main>
+        <!-- start nav side -->
+        <!-- <nav>
+            <div class="avatar">
+                <img src="./assets/images/avatar/face1.jpg" />
+            </div>
+            <ul class="list-unstyled mt-3 mx-auto">
+                <li onclick="filterMsg(this)" data-filter="all">
+                    <i class="bi bi-chat-right-dots"></i>
+                </li>
+                <li onclick="filterMsg(this)" data-filter="private">
+                    <i class="bi bi-person-fill"></i>
+                </li>
+                <li onclick="filterMsg(this)" data-filter="group">
+                    <i class="bi bi-people-fill"></i>
+                </li>
+                <li data-bs-toggle="modal" data-bs-target="#profileModal">
+                    <i class="bi bi-person-lines-fill"></i>
+                </li>
+            </ul>
+        </nav> -->
+        <!-- end nav side -->
+        <div class="comtainerPage" style="width: 100vw;height: 100vh;">
+            <!-- Content Section Start -->
+            <section class="sideBarMember">
+                <div class="chatTopSection">
+                    <div class="px-2 d-flex mb-2">
+                        <span>پیام ها</span>
+                        <span class="msg-nums ms-2">10</span>
+                    </div>
+                    <form class="px-2">
+                        <div class="input-group input-group-sm mb-1">
+                            <input type="text" placeholder="جستجو..." class="form-control searchInput"
+                                placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                            <span class="input-group-text ">
+                                <i class="bi bi-search"></i>
+                            </span>
+                    </form>
+                </div>
+                <!-- <hr /> -->
+                <div class="chatProfile">
+                    <ul class="list-unstyled nav nav-tabs mt-3 mx-auto">
+                        <li class="nav-link active" onclick="filterMsg(this)" data-filter="all">
+                            <i class="bi bi-chat-right-dots"></i>
+                        </li>
+                        <li class="nav-link" onclick="filterMsg(this)" data-filter="private">
+                            <i class="bi bi-person-fill"></i>
+                        </li>
+                        <li class="nav-link" onclick="filterMsg(this)" data-filter="group">
+                            <i class="bi bi-people-fill"></i>
+                        </li>
+                        <li class="nav-link" data-bs-toggle="modal" data-bs-target="#profileModal">
+                            <i class="bi bi-person-lines-fill"></i>
+                        </li>
+                    </ul>
+                    <div
+                        class="w-100 h-100  d-flex flex-column align-items-center justify-content-center loader d-none">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                    <div onclick="changeChatLazy(this)" class="chat pe-2 private">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="status online"><img src="assets/images/avatar/face2.jpg" /></div>
+                            <div class="text d-flex flex-column justify-content-center">
+                                <span class="fw-bold name">مینا حمیدی</span>
+                                <span class="msg">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div onclick="changeChatLazy(this)" class="chat pe-2 group">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <img src="assets/images/avatar/face3.jpg" />
+                            <div class="text d-flex flex-column justify-content-center">
+                                <span class="fw-bold name">گروه دلتا</span>
+                                <span class="msg">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</span>
+                            </div>
+                            <span class="msg-nums1">9</span>
+                        </div>
+                    </div>
+                    <div onclick="changeChatLazy(this)" class="chat pe-2 private">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <img src="assets/images/avatar/face4.jpg" />
+                            <div class="text d-flex flex-column justify-content-center">
+                                <span class="fw-bold name">سعید</span>
+                                <span class="msg">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div onclick="changeChatLazy(this)" class="chat pe-2 private">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <img src="assets/images/avatar/face6.jpg" />
+                            <div class="text d-flex flex-column justify-content-center">
+                                <span class="fw-bold name">مینا </span>
+                                <span class="msg">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div onclick="changeChatLazy(this)" class="chat pe-2 group">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <img src="assets/images/avatar/face2.jpg" />
+                            <div class="text d-flex flex-column justify-content-center">
+                                <span class="fw-bold name">گروه دلتا2</span>
+                                <span class="msg">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</span>
+                            </div>
+                            <span class="msg-nums1">9</span>
+                        </div>
+                    </div>
+                    <div onclick="changeChatLazy(this)" class="chat pe-2 private">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <img src="assets/images/avatar/face2.jpg" />
+                            <div class="text d-flex flex-column justify-content-center">
+                                <span class="fw-bold name">مینا حمیدی</span>
+                                <span class="msg">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</span>
+                            </div>
+                            <span class="msg-nums1">9</span>
+                        </div>
+                    </div>
+                    <div onclick="changeChatLazy(this)" class="chat pe-2 private">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <img src="assets/images/avatar/face2.jpg" />
+                            <div class="text d-flex flex-column justify-content-center">
+                                <span class="fw-bold name">مینا حمیدی</span>
+                                <span class="msg">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</span>
+                            </div>
+                            <span class="msg-nums1">9</span>
+                        </div>
+                    </div>
+                    <div onclick="changeChatLazy(this)" class="chat pe-2 private">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <img src="assets/images/avatar/face2.jpg" />
+                            <div class="text d-flex flex-column justify-content-center">
+                                <span class="fw-bold name">مینا حمیدی</span>
+                                <span class="msg">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</span>
+                            </div>
+                            <span class="msg-nums1">9</span>
+                        </div>
+                    </div>
+                    <div onclick="changeChatLazy(this)" class="chat pe-2 private">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <img src="assets/images/avatar/face2.jpg" />
+                            <div class="text d-flex flex-column justify-content-center">
+                                <span class="fw-bold name">مینا حمیدی</span>
+                                <span class="msg">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</span>
+                            </div>
+                            <span class="msg-nums1">9</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!-- Content Section End -->
+            <!-- Chats section start -->
+            <section class="showChats">
+                <div class="chatcontainer">
+                    <div class="showMsg">
+                        <div class="header">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="avater">
+                                    <div class="d-flex align-items-center">
+                                        <img src="./assets/images/avatar/face2.jpg">
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <span>مینا حمیدی</span>
+                                            <span class="info text-muted">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
+                                                از
+                                                صنعت چاپ</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="info">
+                                    <button class="btn btnCustomSend btnShowMedia">
+                                        <i class="bi bi-info-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="msgContain">
+                            <div class="msgSend">
+                                <div class="singleMsg">
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                        گرافیک است</p>
+                                    <span class="text-muted">22:11</span>
+                                    <span class="check">
+                                        <i class="bi bi-check2"></i>
+                                        <!-- <i class="bi bi-check2-all"></i> -->
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="msgreceive">
+                                <div class="d-flex">
+                                    <div class="singleMsg">
+                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                            طراحان
+                                            گرافیک است</p>
+                                        <span class="text-muted">22:11</span>
+                                    </div>
+                                    <img src="./assets/images/avatar/face2.jpg" class="pro" />
+                                </div>
+                            </div>
+                            <div class="msgSend">
+                                <div class="singleMsg">
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                        گرافیک است</p>
+                                    <span class="text-muted">22:11</span>
+                                    <span class="check">
+                                        <!-- <i class="bi bi-check2"></i> -->
+                                        <i class="bi bi-check2-all"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="msgSend">
+                                <div class="singleMsg">
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                        گرافیک است</p>
+                                    <span class="text-muted">22:11</span>
+                                    <span class="check">
+                                        <i class="bi bi-check2"></i>
+                                        <!-- <i class="bi bi-check2-all"></i> -->
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="msgreceive">
+                                <div class="d-flex">
+                                    <div class="singleMsg">
+                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                            طراحان
+                                            گرافیک است</p>
+                                        <span class="text-muted">22:11</span>
+                                    </div>
+                                    <img src="./assets/images/avatar/face2.jpg" class="pro" />
+                                </div>
+                            </div>
+                            <div class="msgSend">
+                                <div class="singleMsg">
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                        گرافیک است</p>
+                                    <span class="text-muted">22:11</span>
+                                    <span class="check">
+                                        <!-- <i class="bi bi-check2"></i> -->
+                                        <i class="bi bi-check2-all"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="msgreceive">
+                                <div class="d-flex">
+                                    <div class="singleMsg">
+                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                            طراحان
+                                            گرافیک است</p>
+                                        <span class="text-muted">22:11</span>
+                                    </div>
+                                    <img src="./assets/images/avatar/face2.jpg" class="pro" />
+                                </div>
+                            </div>
+                            <div class="msgSend">
+                                <div class="singleMsg">
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                        گرافیک است</p>
+                                    <span class="text-muted">22:11</span>
+                                    <span class="check">
+                                        <!-- <i class="bi bi-check2"></i> -->
+                                        <i class="bi bi-check2-all"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="msgreceive">
+                                <div class="d-flex">
+                                    <div class="singleMsg">
+                                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
+                                            طراحان
+                                            گرافیک است</p>
+                                        <span class="text-muted">22:11</span>
+                                    </div>
+                                    <img src="./assets/images/avatar/face2.jpg" class="pro" />
+                                </div>
+                            </div>
+                            <div class="msgSend singlePicture">
+                                <div class="singleMsg">
+                                    <div class="imgMsgContainer">
+                                        <a href="./assets/images/17103571.jpg" data-toggle="lightboxCustom"
+                                            onclick="lightBoxCustom(event,this)" class="d-inline-block ">
+                                            <img src="assets/images/17103571.jpg" />
+                                        </a>
+                                    </div>
+                                    <span class="text-muted">22:11</span>
+                                    <span class="check">
+                                        <!-- <i class="bi bi-check2"></i> -->
+                                        <i class="bi bi-check2-all"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="msgreceive singlePicture">
+                                <div class="d-flex">
+                                    <div class="singleMsg">
+                                        <div class="imgMsgContainer">
+                                            <a href="assets/images/f1.jpg" class="d-inline-block"
+                                                data-toggle="lightBoxCustom" onclick="lightBoxCustom(event,this)">
+                                                <img src=" assets/images/avatar/face3.jpg" />
+                                            </a>
+                                            <a href="assets/images/avatar/face3.jpg" data-toggle="lightBoxCustom"
+                                                onclick="lightBoxCustom(event,this)">
+                                                <img src=" assets/images/avatar/face3.jpg" />
+                                            </a>
+                                            <a href="assets/video/alider.mp4" class="video d-inline-block"
+                                                data-toggle="lightBoxCustom" onclick="lightBoxCustom(event,this)">
+                                                <img src=" assets/images/17103571.jpg" />
+                                            </a>
+                                        </div>
+                                        <span class="text-muted">100000:11</span>
+                                    </div>
+                                    <img src="./assets/images/avatar/face2.jpg" class="pro" />
+                                </div>
+                            </div>
+                            <div class="msgSend">
+                                <div class="singleMsg">
+                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
+                                        گرافیک است</p>
+                                    <span class="text-muted">22:11</span>
+                                    <span class="check">
+                                        <!-- <i class="bi bi-check2"></i> -->
+                                        <i class="bi bi-check2-all"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <form class="send1">
+                                <div class="sendMsg">
+                                    <div class="d-flex align-items-center justify-content-between h-100">
+                                        <div class="avatar">
+                                            <img src="assets/images/avatar/face1.jpg" />
+                                        </div>
+                                        <div class="inputMsg flex-grow-1 me-2">
+                                            <textarea type="text" placeholder="تایپ کنید..." class="form-control "
+                                                id="inputSendMsg"></textarea>
+                                        </div>
+                                        <div class="sendBtn d-flex">
+                                            <div class="me-2">
+                                                <button class="btn btnCustomSend" type="submit">
+                                                    ارسال
+                                                    <i class="bi bi-send d-none d-md-inline-block"></i>
+                                                </button>
+                                            </div>
+                                            <div class="otherBtn me-2">
+                                                <label for="inputSendmsg" class="btn btnCustomFile">
+                                                    <i class="bi bi-paperclip"></i>
+                                                </label>
+                                                <input type="file" id="inputSendmsg" class="d-none">
+                                            </div>
+                                            <div class="otherBtn me-2">
+                                                <span class="btn btnCustomFile " id="btnemoji">
+                                                    <i class="bi bi-emoji-smile"></i> </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                <div
+                    class="lazyload w-100 h-100 position-absolute start-50 top-50 translate-middle text-center d-flex flex-column align-items-center justify-content-center">
+                    <p class="lazyText fw-bold"></p>
+                </div>
+        </div>
+        </section>
+        <!-- Box Media View -->
+        <div class="showMediaSection">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 header pt-2">
+                        <div class="d-flex align-items-center">
+                            <div class="img">
+                                <img src="./assets/images/avatar/face1.jpg" />
+                            </div>
+                            <div class="detail d-flex flex-column">
+                                <span class="name">
+                                    مینا حمیدی
+                                </span>
+                                <span class="text-muted">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                                    چاپ</span>
+                            </div>
+                            <div class="closeBtn">
+                                <button class="btn btnCloseMedia">
+                                    <i class="bi bi-x-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-2" />
+                    <div class="modal modal-xl fade" id="showMediaModal" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered ">
+                            <div class="modal-content ">
+                                <div class="modal-body text-center">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btnCloseModal"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 showAllImg">
+                        <div class="row">
+                            <div class="col-6 mb-2">
+                                <div class="img-show">
+                                    <a href="./assets/video/alider.mp4" class="video d-inline-block"
+                                        data-toggle="lightboxCustom" onclick="lightBoxCustom(event,this)">
+                                        <img src="./assets/images/17103571.jpg" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <div class="img-show">
+                                    <a href="./assets/images/avatar/face3.jpg" data-toggle="lightBoxCustom"
+                                        onclick="lightBoxCustom(event,this)">
+                                        <img src="./assets/images/avatar/face3.jpg" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <div class="img-show">
+                                    <a href="./assets/images/f1.jpg" class=" d-inline-block"
+                                        data-toggle="lightboxCustom" onclick="lightBoxCustom(event,this)">
+                                        <img src="./assets/images/f1.jpg" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <div class="img-show">
+                                    <a href="./assets/images/17103571.jpg" class=" d-inline-block"
+                                        data-toggle="lightboxCustom" onclick="lightBoxCustom(event,this)">
+                                        <img src="./assets/images/17103571.jpg" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <div class="img-show">
+                                    <a href="./assets/images/bg-1.jpg" data-toggle="lightBoxCustom"
+                                        onclick="lightBoxCustom(event,this)">
+                                        <img src="./assets/images/bg-1.jpg" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bg black after body -->
+        <div class="afterMediaSection"></div>
+        <!-- Chats section end -->
+        <!-- Modal Profile Start-->
+        <div class="modal fade modalProfile" id="profileModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">پروفایل</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label class="form-label">نام کاربری</label>
+                                <input type="text" class="form-control " placeholder="نام کاربری خود را تغییر دهید">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label picture py-2 px-2" for="pictureProfileEdit">
+                                    <img src="./assets/images/avatar/face1.jpg" class="me-1" />
+                                    <span class="small text-muted">
+                                        برای انتخاب عکس جدید کلیک کنید
+                                    </span>
+                                </label>
+                                <input type="file" class="form-control d-none" id="pictureProfileEdit">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-sm btnSave btn-primary">ذخیره تغییرات</button>
+                            <button type="button" class="btn btn-sm btnClose btn-secondary"
+                                data-bs-dismiss="modal">بستن</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Profile End -->
+        </div>
+    </main>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+
+</body>
+
+</html>

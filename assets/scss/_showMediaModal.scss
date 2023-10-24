@@ -1,0 +1,72 @@
+#showMediaModal {
+    .h-modal {
+        max-height: 80vh;
+    }
+
+    transition: all 1s;
+    @include afterColorBlack(0.9);
+
+    .btnCloseModal {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+
+        &.close {
+            &::after {
+                transform: rotate(45deg);
+            }
+
+            &::before {
+                transform: rotate(-45deg);
+            }
+        }
+
+        &::after {
+            transition: all 0.3s;
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 3px;
+            background: $whiteColor;
+            transform: rotate(-45deg);
+        }
+
+        &::before {
+            transition: all 0.3s;
+            transform: rotate(45deg);
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 3px;
+            background: $whiteColor;
+        }
+    }
+
+    .modal-content {
+
+        background: none;
+        border: none;
+        box-shadow: none;
+
+        & * {
+            color: $whiteColor;
+            border: none;
+            outline: none;
+            box-shadow: none;
+        }
+    }
+}
+
+.afterMediaSection {
+    transition: all 0.3;
+
+    &.show {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        @include afterColorBlack(0.5);
+        z-index: 1;
+    }
+}

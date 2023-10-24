@@ -1,0 +1,62 @@
+.modalProfile {
+    .modal-content {
+        border: none;
+
+        label {
+            &.picture {
+                cursor: pointer;
+                @include border(1px, $light2Color);
+                @include borderRadiusAll(5px);
+                // text-align: center;
+                width: 100%;
+
+                // height: auto;
+                img {
+                    width: 60px;
+                    height: 60px;
+                    @include borderRadiusAll(10px)
+                }
+            }
+        }
+
+        input {
+            outline: none;
+            box-shadow: none;
+            @include border(1px, $lightColor);
+            @include borderRadiusAll(5px);
+
+            &:focus {
+                border-color: $primaryColor;
+            }
+
+            &::placeholder {
+                font-size: 0.9rem;
+            }
+        }
+
+        .modal-footer {
+           .btnSave{
+            background: $primaryColor;
+            color: $whiteColor;
+            font-size: 1rem;
+            padding: 0;
+            padding: 6px 10px;
+            @include borderRadiusAll(5px);
+            border: none;
+            outline: none;
+            box-shadow: none;
+           }
+           .btnClose{
+            background: $redColor;
+            color: $whiteColor;
+            font-size: 1rem;
+            padding: 0;
+            padding: 6px 10px;
+            @include borderRadiusAll(5px);
+            border: none;
+            outline: none;
+            box-shadow: none;
+           }
+        }
+    }
+}

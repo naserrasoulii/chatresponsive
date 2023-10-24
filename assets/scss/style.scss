@@ -1,0 +1,27 @@
+@import './fonts.scss';
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: 'iransans';
+    scroll-behavior: smooth;
+}
+
+i {
+    &::before {
+        vertical-align: middle !important
+    }
+}
+
+@import './colors.scss';
+@import './shadow.scss';
+@import './border.scss';
+@import './sidebarmember';
+@import './showMedia';
+@import './showMediaModal';
+@import './aftermediaSection';
+@import './showchat';
+@import './tabfilter';
+@import './modalProfile';
+@import './responsive';

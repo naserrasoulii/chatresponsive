@@ -1,0 +1,191 @@
+.sideBarMember {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    width: 25%;
+
+    .chatTopSection {
+        padding: 30px 0;
+        height: 100%;
+        width: 100%;
+        background: $whiteColor;
+
+        .msg-nums {
+            width: 25px;
+            height: 25px;
+            background: $redColor;
+            color: $whiteColor;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-size: 0.8rem;
+        }
+
+        form {
+            .input-group {
+                input {
+                    direction: rtl;
+                    @include borderRadiusAll(5px);
+
+                    &::placeholder {
+                        direction: rtl !important;
+                        font-size: 0.9rem;
+                        transition: padding 0.2s;
+                    }
+
+                    &:focus {
+                        box-shadow: none;
+                        outline: none;
+                        @include border(1px, $primaryColor);
+
+                        &::placeholder {
+                            padding-right: 3px;
+                        }
+                    }
+                }
+
+                .input-group-text {
+                    background: $primaryColor;
+
+                    i {
+                        color: $whiteColor;
+                    }
+                }
+            }
+        }
+    }
+
+    .chatProfile {
+        height: 100%;
+        overflow: auto;
+
+        &::-webkit-scrollbar-track {
+            background: $whiteColor;
+        }
+
+        &::-webkit-scrollbar {
+            width: 5px;
+            border-radius: 10px;
+            background-color: $lightColor;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $light2Color;
+            border-radius: 5px;
+        }
+
+        .status {
+            position: relative;
+            &.online {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 10%;
+                    background: #dddf00;
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                }
+            }
+
+        }
+        .chat {
+            background: $whiteColor;
+            cursor: pointer;
+            @include borderBottom(1px, $whiteColor);
+            padding: 10px 0;
+            position: relative;
+            .text{
+                flex-grow: 1;
+            }
+            &::before {
+                transition: all 0.45s linear;
+                content: "";
+                width: 0%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: $light2Color;
+                z-index: -1;
+            }
+
+            &::after {
+                content: "";
+                width: 0;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: $primaryColor;
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                z-index: 0;
+
+                &::before {
+                    width: 100%;
+                }
+
+
+            }
+
+            &.active {
+                z-index: 0;
+
+                &::after {
+                    width: 3px;
+
+                }
+
+                &::before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background: $light2Color;
+                    z-index: -1
+                }
+            }
+
+            .text {
+                user-select: none;
+
+                .name {
+                    font-size: 0.8rem;
+                }
+
+                .msg {
+                    font-size: 0.7rem;
+                    opacity: 0.6;
+                    font-weight: bold;
+                }
+            }
+
+            img {
+                margin-left: 5px;
+                margin-right: 5px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+
+            .msg-nums1 {
+                flex-shrink: 0;
+                width: 25px;
+                height: 25px;
+                background: $lightColor;
+                color: $secoundryColor;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 25px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+}

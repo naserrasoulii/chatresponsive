@@ -1,0 +1,13 @@
+.afterMediaSection {
+    transition: all 0.3;
+
+    &.show {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        @include afterColorBlack(0.5);
+        z-index: 1;
+    }
+}

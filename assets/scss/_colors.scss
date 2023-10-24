@@ -1,0 +1,27 @@
+$whiteColor: #fff;
+$blackColor: #000;
+// $primaryColor: #03045e;
+$primaryColor: #3a0ca3;
+// $secoundryColor: #0096c7;
+$secoundryColor: #fca311;
+$redColor: #bc6c25;
+$lightColor: #c1e8f0;
+$blueColor: #219ebc;
+$light2Color: #ebebeb;
+
+:root {
+    $whiteColor: #fff;
+    $blackColor: #000;
+    // $primaryColor: #03045e;
+    $primaryColor: #3a0ca3;
+    // $secoundryColor: #0096c7;
+    $secoundryColor: #fca311;
+    $redColor: #bc6c25;
+    $lightColor: #c1e8f0;
+    $blueColor: #219ebc;
+    $light2Color: #ebebeb;
+}
+
+@mixin afterColorBlack($opacity) {
+    background: rgba(0, 0, 0, $opacity);
+}

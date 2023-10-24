@@ -1,0 +1,12 @@
+@import './colors.scss';
+
+@mixin boxSahdowWhite($px, $opacity) {
+    box-shadow: 0 0 $px rgba(255, 255, 255, $opacity);
+}
+
+@mixin boxSahdowBlack($px, $opacity) {
+    box-shadow: 0 0 $px rgba(0, 0, 0, $opacity);
+}
+@mixin customShadow($px,$color){
+    box-shadow: 0 0 $px $color;
+}

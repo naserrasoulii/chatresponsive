@@ -1,0 +1,378 @@
+@media (max-width:576px) {
+    .sideBarMember {
+        width: 100%;
+    }
+
+    .showChats {
+        width: 100%;
+        display: none;
+
+        .chatcontainer {
+            .showMsg {
+                padding: 0 5px;
+
+                .header {
+                    .avater {
+                        padding: 5px 0;
+
+                        span {
+                            font-size: 0.9rem;
+                            font-weight: bold;
+
+                            &.info {
+                                font-weight: normal;
+                                font-size: 0.8rem;
+                            }
+                        }
+                    }
+                }
+
+                .msgContain {
+                    padding: 0;
+
+                    .msgSend {
+                        a {
+                            display: inline-block;
+                            margin-bottom: 5px;
+                        }
+
+                        &.singlePicture {
+                            padding: 15px 10px;
+                        }
+
+                        .singleMsg {
+                            p {
+                                font-size: 0.7rem;
+                                font-weight: normal;
+                            }
+
+                            span {
+                                font-size: 0.7rem;
+
+                                &.check {
+                                    font-size: 0.7rem;
+                                }
+                            }
+                        }
+                    }
+
+                    .msgreceive {
+                        &.singlePicture {
+                            .imgMsgContainer {
+                                padding: 5px;
+
+                                a {
+                                    display: inline-block;
+                                    margin-bottom: 5px;
+
+                                }
+                            }
+
+                            span {
+                                font-size: 0.7rem;
+
+                                &.check {
+                                    font-size: 0.8rem;
+                                }
+                            }
+                        }
+
+                        img {
+                            &.pro {
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+
+                        .singleMsg {
+                            p {
+                                color: #2c0735;
+                                font-size: 0.7rem;
+                            }
+
+                            span {
+                                font-size: 0.7rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sendMsg {
+                @include boxSahdowWhite(10px, 0.5);
+                padding: 5px;
+
+                .btnCustomSend {
+                    i {
+                        display: none;
+                    }
+
+                }
+
+                .btnMoreAccess {
+                    i {
+                        display: block;
+                    }
+                }
+
+
+
+
+                .inputMsg {
+                    textarea {
+                        &::placeholder {
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+
+                .avatar {
+                    img {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .showMediaSection {
+        width: 100%;
+
+        .header {
+            .detail {
+                flex-grow: 1;
+            }
+        }
+    }
+}
+
+@media (min-width:577px) and (max-width:768px) {
+    .sideBarMember {
+        width: 100%;
+    }
+
+    .showChats {
+        width: 100%;
+        display: none;
+
+        .chatcontainer {
+            .showMsg {
+                padding: 0 5px;
+
+                .header {
+                    .avater {
+                        padding: 5px 0;
+
+                        span {
+                            font-size: 0.9rem;
+                            font-weight: bold;
+
+                            &.info {
+                                font-weight: normal;
+                                font-size: 0.8rem;
+                            }
+                        }
+                    }
+                }
+
+                .msgContain {
+                    padding: 0;
+
+                    .msgSend {
+                        a {
+                            display: inline-block;
+                            margin-bottom: 5px;
+                        }
+
+                        &.singlePicture {
+                            padding: 15px 10px;
+                        }
+
+                        .singleMsg {
+                            p {
+                                font-size: 0.7rem;
+                                font-weight: normal;
+                            }
+
+                            span {
+                                font-size: 0.7rem;
+
+                                &.check {
+                                    font-size: 0.7rem;
+                                }
+                            }
+                        }
+                    }
+
+                    .msgreceive {
+                        &.singlePicture {
+                            .imgMsgContainer {
+                                padding: 5px;
+
+                                a {
+                                    display: inline-block;
+                                    margin-bottom: 5px;
+
+                                }
+                            }
+
+                            span {
+                                font-size: 0.7rem;
+
+                                &.check {
+                                    font-size: 0.8rem;
+                                }
+                            }
+                        }
+
+                        img {
+                            &.pro {
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+
+                        .singleMsg {
+                            p {
+                                color: #2c0735;
+                                font-size: 0.7rem;
+                            }
+
+                            span {
+                                font-size: 0.7rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sendMsg {
+                @include boxSahdowWhite(10px, 0.5);
+                padding: 5px;
+
+                .btnCustomSend {
+                    i {
+                        display: none;
+                    }
+
+                }
+
+                .btnMoreAccess {
+                    i {
+                        display: block;
+                    }
+                }
+
+
+
+
+                .inputMsg {
+                    textarea {
+                        &::placeholder {
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+
+                .avatar {
+                    img {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .showMediaSection {
+        .header {
+            .detail {
+                flex-grow: 1;
+            }
+        }
+    }
+}
+
+@media (min-width:769px) and (max-width:1400px) {
+    .sideBarMember {
+        width: 30%;
+    }
+
+    .showChats {
+        width: 70%;
+
+
+    }
+
+    .showMediaSection {
+        .header {
+            .detail {
+                flex-grow: 1;
+            }
+        }
+    }
+}
+
+@media (min-width:1401px) {
+    .sideBarMember {
+        width: 30%;
+    }
+
+    .showChats {
+        width: 70%;
+
+        .chatcontainer {
+            .showMsg {
+
+
+                .msgContain {
+
+                    .msgSend {
+                        max-width: 600px;
+                    }
+
+                    .msgreceive {
+
+                        max-width: 600px;
+
+                        img {
+                            &.pro {
+                                width: 60px;
+                                height: 60px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sendMsg {
+                @include boxSahdowWhite(10px, 0.5);
+
+                .inputMsg {
+                    textarea {
+                        &::placeholder {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+
+                .avatar {
+                    img {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .showMediaSection {
+        .header {
+            .detail {
+                flex-grow: 1;
+            }
+        }
+    }
+
+}

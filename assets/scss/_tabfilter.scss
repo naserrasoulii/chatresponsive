@@ -1,0 +1,25 @@
+ul.nav-tabs {
+    position: sticky;
+    top: 0;
+    @include boxSahdowWhite(10px, 0.9);
+    z-index: 1;
+    background: $whiteColor;
+    cursor: pointer;
+    .avatar {
+        margin: 0 auto;
+        width: 70px;
+        height: 70px;
+        cursor: pointer;
+    }
+    li {
+        margin-bottom: 5px;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        i {
+            color: $primaryColor !important;
+            font-size: 1rem;
+        }
+
+    }
+}

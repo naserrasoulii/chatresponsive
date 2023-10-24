@@ -1,0 +1,429 @@
+.showChats {
+    height: 100%;
+    width: 75%;
+    position: absolute;
+    left: 0;
+    background: $whiteColor;
+
+    .chatcontainer {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        background: url('./../images/abstract-luxury-blur-dark-grey-black-gradient-used-as-background-studio-wall-display-your-products-plain-studio-background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+        .showMsg {
+            width: 100%;
+            height: 100%;
+            padding: 0 10px;
+            margin: 0 auto;
+            position: relative;
+            opacity: 0;
+            transition: all 0.5s;
+
+            &.show {
+                opacity: 1;
+            }
+
+            .header {
+                width: 100%;
+                z-index: 1;
+                background: $whiteColor;
+                padding: 5px;
+                margin: 0 auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: rgba(255, 255, 255, 0.6);
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                backdrop-filter: blur(5px);
+                -webkit-backdrop-filter: blur(5px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+
+                .avater {
+                    padding: 10px 0;
+
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        @include borderRadiusAll(50%);
+                        margin-left: 5px;
+                        @include border(2px, $primaryColor)
+                    }
+
+                    span {
+                        font-size: 0.9rem;
+                        font-weight: bold;
+
+                        &.info {
+                            font-weight: normal;
+                            font-size: 0.8rem;
+                        }
+                    }
+                }
+
+                .info {
+                    .btnCustomSend {
+                        background: $primaryColor;
+                        color: $whiteColor;
+                        font-size: 1rem;
+                        padding: 0;
+                        padding: 6px 10px;
+                        @include borderRadiusAll(10px);
+                        border: none;
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            .msgContain {
+                width: 100%;
+                height: calc(100% - 100px);
+                margin: 0 auto;
+                overflow-y: auto;
+                scroll-behavior: smooth !important;
+                padding-top: 30px;
+
+                &::-webkit-scrollbar-track {
+                    // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+                    background: transparent;
+                }
+
+                &::-webkit-scrollbar {
+                    width: 5px;
+                    border-radius: 10px;
+                    // background-color: $lightColor;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: $lightColor;
+                    border-radius: 5px;
+                }
+
+                .msgSend {
+                    width: fit-content;
+                    background: linear-gradient(123deg, rgba(57, 106, 252, 1) 0%, rgba(41, 72, 255, 1) 100%);
+                    color: $whiteColor;
+                    max-width: 400px;
+                    min-width: 70px;
+                    padding: 10px;
+                    @include borderRadius(15px, 15px, 5px, 15px);
+                    margin-bottom: 1rem;
+                    position: relative;
+                    clear: both;
+
+
+                    a {
+                        text-decoration: none;
+                    }
+
+                    &.singlePicture {
+                        padding: 20px;
+
+                        .imgMsgContainer {
+                            width: fit-content;
+                            @include borderRadiusAll(5px);
+
+                            img {
+                                object-fit: 100% 100%;
+                                width: 100%;
+                                padding: 3px;
+                                margin-bottom: 5px;
+                                background: $whiteColor;
+                                @include borderRadiusAll(10px)
+                            }
+
+                            .video {
+                                position: relative;
+                                margin-bottom: 5px;
+
+                                img {
+                                    margin: 0;
+                                    padding: 0;
+                                }
+
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    @include afterColorBlack(0.5);
+                                    @include borderRadiusAll(10px);
+                                }
+
+                                &::before {
+                                    z-index: 1;
+                                    content: " \F4F4 ";
+                                    font-family: bootstrap-icons !important;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    color: $whiteColor;
+                                    font-size: 3rem;
+                                }
+                            }
+
+                        }
+
+                        span {
+                            font-size: 0.8rem;
+                            position: absolute;
+                            left: 10px;
+                            bottom: 0 !important;
+                            color: $whiteColor;
+
+                            &.text-muted {
+                                color: $whiteColor !important;
+                                opacity: 0.5;
+                            }
+
+                            &.check {
+                                position: absolute;
+                                left: 40px;
+                                bottom: 0;
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+
+                    .singleMsg {
+                        p {
+                            // color: $primaryColor;
+                            font-size: 0.8rem;
+                        }
+
+                        span {
+                            font-size: 0.8rem;
+                            position: absolute;
+                            left: 10px;
+                            bottom: 10px;
+                            color: $whiteColor;
+
+                            &.text-muted {
+                                color: $whiteColor !important;
+                                opacity: 0.5;
+                            }
+
+                            &.check {
+                                position: absolute;
+                                left: 40px;
+                                bottom: 10px;
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+                }
+
+                .msgreceive {
+                    float: left;
+                    clear: both;
+                    width: fit-content;
+                    max-width: 400px;
+                    margin-bottom: 1rem;
+
+
+                    a {
+                        text-decoration: none;
+                    }
+
+                    &.singlePicture {
+                        .imgMsgContainer {
+                            padding: 5px;
+
+                            .video {
+                                position: relative;
+
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    @include afterColorBlack(0.5);
+                                    @include borderRadiusAll(10px);
+                                }
+
+                                &::before {
+                                    z-index: 1;
+                                    content: " \F4F4 ";
+                                    font-family: bootstrap-icons !important;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    color: $whiteColor;
+                                    font-size: 3rem;
+                                }
+                            }
+
+                            a {
+                                background: $light2Color;
+                                padding: 3px;
+                                margin-bottom: 5px;
+                                @include borderRadiusAll(10px);
+
+                                img {
+                                    object-fit: 100% 100%;
+                                    width: auto;
+                                    max-width: 100%;
+                                    @include borderRadiusAll(10px);
+                                }
+                            }
+                        }
+
+                        span {
+                            font-size: 0.8rem;
+                            position: absolute;
+                            left: 10px;
+                            bottom: 0 !important;
+                            // color: $whiteColor;
+
+                            &.check {
+                                position: absolute;
+                                left: 40px;
+                                bottom: 0;
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+
+                    img {
+                        &.pro {
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            @include border(2px, $secoundryColor);
+                            margin-right: 5px;
+                        }
+                    }
+
+                    .singleMsg {
+                        padding: 10px;
+                        @include borderRadius(5px, 15px, 15px, 15px);
+                        position: relative;
+                        background: $whiteColor;
+
+
+                        p {
+                            color: #2c0735;
+                            font-size: 0.8rem;
+                        }
+
+                        span {
+                            font-size: 0.7rem;
+                            position: absolute;
+                            left: 10px;
+                            bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .sendMsg {
+            width: 100%;
+            height: 100px;
+            margin: 0 auto;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            @include boxSahdowWhite(10px, 0.5);
+            padding: 5px;
+
+            .btnCustomSend {
+                background: $primaryColor;
+                color: $whiteColor;
+                font-size: 1rem;
+                padding: 0;
+                padding: 6px 10px;
+                @include borderRadiusAll(5px);
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
+
+            .btnCustomFile {
+                background: $primaryColor;
+                color: $whiteColor;
+                font-size: 1rem;
+                padding: 6px 10px;
+                @include borderRadiusAll(5px);
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
+
+            .inputMsg {
+                textarea {
+                    &::-webkit-scrollbar {
+                        width: 0px;
+                        border-radius: 10px;
+                    }
+
+                    padding: 6px 10px;
+                    @include border(1px, transparent);
+                    transition: all 0.3s;
+                    font-size: 0.9rem;
+                    resize: none;
+                    // height: 100px;
+
+
+                    &:focus {
+                        @include border(1px, $secoundryColor);
+                        box-shadow: none;
+                        outline: none;
+                    }
+
+                    &::placeholder {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+
+            .avatar {
+                img {
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    @include border(2px, $secoundryColor);
+                    margin: 0 5px;
+                }
+            }
+        }
+
+        .lazyload {
+            transition: all 0.3s;
+
+            p {
+                font-weight: bold;
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+// .ratio {
+//     background: $lightColor !important;
+//     padding: 20px;
+//     img {
+//         padding: 50px;
+//         width: auto !important;
+//         max-width: 100% !important;
+//         max-height: 100% !important;
+//         object-fit: 100% 100%;
+//     }
+// }
